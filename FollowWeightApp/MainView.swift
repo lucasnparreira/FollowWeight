@@ -12,12 +12,12 @@ struct MainView: View {
         TabView {
             ContentView()
                 .tabItem {
-                    Label("Add Weight", systemImage: "plus.circle")
+                    Label("Add Peso", systemImage: "plus.circle")
                 }
 
             WeightHistoryView()
                 .tabItem {
-                    Label("History", systemImage: "chart.bar.xaxis")
+                    Label("Historico", systemImage: "chart.bar.xaxis")
                 }
              HealthTipsView()
                 .tabItem {

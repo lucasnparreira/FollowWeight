@@ -26,7 +26,7 @@ struct WeightHistoryView: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .padding(.top, 20)
             HStack {
-                DatePicker("Filtrar data", selection: $filterDate, displayedComponents: .date)
+                DatePicker("Filtrar por data", selection: $filterDate, displayedComponents: .date)
                     .padding()
             }
             HStack {

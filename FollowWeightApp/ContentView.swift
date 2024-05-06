@@ -17,18 +17,35 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            Text("Acompanhamento de Peso")
-                        .font(.headline)
-                        .navigationBarTitleDisplayMode(.inline)
-                        .padding(.top, 20)
-            // Botão para cadastrar peso
-            Button(action: {
-                showingAddWeightView.toggle()
-            }) {
-                Text("Adicionar Peso")
+            HStack {
+                Spacer()
+                Button(action: {
+                    showingAddWeightView.toggle()
+                }) {
+                    HStack {
+//                        Text("Adicionar Peso")
+                        Image(systemName: "plus")
+                            .font(.headline)
+                            .fontWeight(.bold)
+                            
+                    }
+                    .padding(.horizontal)
+                    .frame(height: 40)
+                    .background(Color.green)
+                    .foregroundColor(.white)
+                    .opacity(0.7)
+                    .cornerRadius(20)
+                }
+                .padding()
+                .padding(.bottom,50)
+                
             }
-            .padding()
-            .foregroundColor(.green)
+            Spacer()
+            
+            Text("Acompanhamento de Peso")
+                .font(.headline)
+                .padding(.top, 10)
+                .padding(.bottom,10)
             
             if !entries.isEmpty {
                 let initialWeight = String(format: "%.2f", entries.first?.weight ?? 0) // Peso inicial
@@ -42,6 +59,8 @@ struct ContentView: View {
                 Text("Sem dados cadastrados")
             }
             
+            Spacer()
+            
             // Resumo com peso inicial, último peso e diferença
             if let firstWeightString = entries.first?.weight,
                let lastWeightString = entries.last?.weight {
@@ -54,17 +73,15 @@ struct ContentView: View {
                         .padding()
                 }
             }
-                
-
         }
         .sheet(isPresented: $showingAddWeightView) {
             WeightEntryView().environment(\.managedObjectContext, viewContext)
         }
-        
+        .padding(.horizontal)
+        .padding(.vertical)
+        .navigationBarTitleDisplayMode(.inline)
     }
-        
 }
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
@@ -72,20 +89,29 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-
 struct SummaryView: View {
     let initialWeight: Float
     let lastWeight: Float
     let difference: Float
 
     var body: some View {
-        VStack {
-            Text("Resumo")
-                .font(.headline)
-            Text("Peso inicial: \(String(format: "%.2f", initialWeight)) kg")
-            Text("Último peso: \(String(format: "%.2f", lastWeight)) kg")
-            Text("Diferença: \(String(format: "%.2f", difference)) kg")
+        NavigationView {
+            VStack {
+                Text("Resumo")
+                    .font(.headline)
+                Text("Peso inicial: \(String(format: "%.2f", initialWeight)) kg")
+                Text("Último peso: \(String(format: "%.2f", lastWeight)) kg")
+                if (lastWeight > initialWeight){
+                    Text("Diferença: + \(String(format: "%.2f", difference)) kg")
+                } else if (lastWeight == initialWeight) {
+                    Text("Diferença: \(String(format: "%.2f", difference)) kg")
+                } else {
+                    Text("Diferença: - \(String(format: "%.2f", difference)) kg")
+                }
+                
+            }
+            
         }
-
     }
 }
+

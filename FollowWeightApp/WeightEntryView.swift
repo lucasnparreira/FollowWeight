@@ -10,18 +10,42 @@ import SwiftUI
 struct WeightEntryView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @State private var weight: String = ""
+    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         VStack {
-            TextField("Enter weight", text: $weight)
-                .padding()
+            
+            Spacer()
 
-            Button("Save") {
-                saveWeight()
+            TextField("Informe o peso", text: $weight)
+                .padding()
+                .keyboardType(.decimalPad)
+
+            HStack {
+                Button("Salvar") {
+                    saveWeight()
+                }
+                .padding()
+                
+                Button(action: {
+    presentationMode.wrappedValue.dismiss()
+                }) {
+                    Text("Cancelar")
+                        .padding(.horizontal)
+    //                    .frame(height: 40)
+    //                    .background(Color.green)
+                        .foregroundColor(.red)
+    //                    .cornerRadius(20)
+                }
             }
-            .padding()
+            
+            
+            Spacer()
         }
-        .navigationTitle("Add Weight")
+        .navigationBarTitleDisplayMode(.inline)
+//        .padding(.horizontal)
+        .padding(.vertical)
+        
     }
 
     private func saveWeight() {
@@ -37,6 +61,7 @@ struct WeightEntryView: View {
         }
 
         weight = "" // Limpa o campo de texto após salvar
+        presentationMode.wrappedValue.dismiss()
     }
 }
 
