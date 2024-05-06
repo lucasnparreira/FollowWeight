@@ -12,7 +12,7 @@ struct MainView: View {
         TabView {
             ContentView()
                 .tabItem {
-                    Label("Add Peso", systemImage: "plus.circle")
+                    Label("Peso", systemImage: "menucard")
                 }
 
             WeightHistoryView()

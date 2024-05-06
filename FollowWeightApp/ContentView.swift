@@ -57,6 +57,7 @@ struct ContentView: View {
                     .frame(height: 200)
             } else {
                 Text("Sem dados cadastrados")
+                Text("Clique no botão + para cadastrar seu peso.")
             }
             
             Spacer()
