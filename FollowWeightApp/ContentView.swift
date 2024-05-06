@@ -12,9 +12,9 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \WeightEntry.date, ascending: true)],
         animation: .default)
     private var entries: FetchedResults<WeightEntry>
-
+    
     @State private var showingAddWeightView = false
-
+    
     var body: some View {
         VStack {
             HStack {
@@ -23,11 +23,11 @@ struct ContentView: View {
                     showingAddWeightView.toggle()
                 }) {
                     HStack {
-//                        Text("Adicionar Peso")
+                        //                        Text("Adicionar Peso")
                         Image(systemName: "plus")
                             .font(.headline)
                             .fontWeight(.bold)
-                            
+                        
                     }
                     .padding(.horizontal)
                     .frame(height: 40)
@@ -62,16 +62,14 @@ struct ContentView: View {
             Spacer()
             
             // Resumo com peso inicial, último peso e diferença
-            if let firstWeightString = entries.first?.weight,
-               let lastWeightString = entries.last?.weight {
-                if let firstWeight = Float(firstWeightString),
-                   let lastWeight = Float(lastWeightString) {
-                    let formattedFirstWeight = String(format: "%.2f", firstWeight)
-                    let formattedLastWeight = String(format: "%.2f", lastWeight)
-                    let difference = lastWeight - firstWeight
-                    SummaryView(initialWeight: Float(formattedFirstWeight) ?? 0, lastWeight: Float(formattedLastWeight) ?? 0, difference: difference)
-                        .padding()
-                }
+            if let firstWeight = entries.first?.weight,
+               let lastWeight = entries.last?.weight {
+                let formattedFirstWeight = String(format: "%.2f", firstWeight ?? 0)
+                let formattedLastWeight = String(format: "%.2f", lastWeight ?? 0)
+                let difference = (lastWeight ?? 0) - (firstWeight ?? 0)
+                
+                SummaryView(initialWeight: Float(formattedFirstWeight) ?? 0, lastWeight: Float(formattedLastWeight) ?? 0, difference: difference)
+                    .padding()
             }
         }
         .sheet(isPresented: $showingAddWeightView) {
@@ -81,7 +79,9 @@ struct ContentView: View {
         .padding(.vertical)
         .navigationBarTitleDisplayMode(.inline)
     }
-}
+        
+    }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
