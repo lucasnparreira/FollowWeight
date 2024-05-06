@@ -57,7 +57,7 @@ struct WeightHistoryView: View {
                 if isExportingCSV {
                     ProgressView()
                 } else {
-                    Label("Exportar CSV", systemImage: "square.and.arrow.up")
+                    Label("Exportar Historico", systemImage: "square.and.arrow.up")
                 }
             }
             .padding()
