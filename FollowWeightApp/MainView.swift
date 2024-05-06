@@ -21,7 +21,7 @@ struct MainView: View {
                 }
              HealthTipsView()
                 .tabItem {
-                    Label("Tips", systemImage: "chart.bar.xaxis")
+                    Label("Motivacional", systemImage: "figure.cooldown")
                 }
         }
     }

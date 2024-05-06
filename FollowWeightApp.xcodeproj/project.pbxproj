@@ -22,6 +22,7 @@
 		0F2D6C5D2BE8041D007590E8 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2D6C5C2BE8041D007590E8 /* LineChart.swift */; };
 		0F2D6C5F2BE80450007590E8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2D6C5E2BE80450007590E8 /* MainView.swift */; };
 		0F2D6C612BE8046E007590E8 /* HealthTipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2D6C602BE8046E007590E8 /* HealthTipsView.swift */; };
+		0FC879B02BE8DF3300A03CF7 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FC879AF2BE8DF3300A03CF7 /* data.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		0F2D6C5C2BE8041D007590E8 /* LineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		0F2D6C5E2BE80450007590E8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		0F2D6C602BE8046E007590E8 /* HealthTipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthTipsView.swift; sourceTree = "<group>"; };
+		0FC879AF2BE8DF3300A03CF7 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				0F2D6C5C2BE8041D007590E8 /* LineChart.swift */,
 				0F2D6C602BE8046E007590E8 /* HealthTipsView.swift */,
 				0F2D6C5E2BE80450007590E8 /* MainView.swift */,
+				0FC879AF2BE8DF3300A03CF7 /* data.json */,
 				0F2D6C2F2BE7FFEF007590E8 /* Assets.xcassets */,
 				0F2D6C312BE7FFEF007590E8 /* FollowWeightApp.entitlements */,
 				0F2D6C2A2BE7FFEC007590E8 /* WeightEntry.xcdatamodeld */,
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F2D6C342BE7FFEF007590E8 /* Preview Assets.xcassets in Resources */,
+				0FC879B02BE8DF3300A03CF7 /* data.json in Resources */,
 				0F2D6C302BE7FFEF007590E8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
