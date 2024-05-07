@@ -12,7 +12,7 @@ struct MainView: View {
         TabView {
             ContentView()
                 .tabItem {
-                    Label("Add Peso", systemImage: "plus.circle")
+                    Label("Peso", systemImage: "menubar.rectangle")
                 }
 
             WeightHistoryView()
@@ -23,6 +23,10 @@ struct MainView: View {
                 .tabItem {
                     Label("Motivacional", systemImage: "figure.cooldown")
                 }
+            SettingsView()
+               .tabItem {
+                   Label("Configurações", systemImage: "gear")
+               }
         }
     }
 }
