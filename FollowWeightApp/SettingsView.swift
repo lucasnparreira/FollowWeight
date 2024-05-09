@@ -12,18 +12,20 @@ struct SettingsView: View {
     @AppStorage("reminderEnabled") private var reminderEnabled = false
     @AppStorage("reminderFrequency") private var reminderFrequency: ReminderFrequency = .daily
     @AppStorage("motivationalQuotesEnabled") private var motivationalQuotesEnabled = false
-        
+    private var isRunning = true
+
     var body: some View {
         VStack {
-            /*Toggle("Frases motivacionais", isOn: $motivationalQuotesEnabled)
+            Toggle("Frases motivacionais", isOn: $motivationalQuotesEnabled)
                 .padding()
                 .onChange(of: motivationalQuotesEnabled) { enabled in
                     if enabled {
                         scheduleMotivationalQuotes()
                     } else {
                         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["motivationalQuotes"])
+                        stopScheduleMotivationalQuotes()
                     }
-                } */
+                } 
             
             Toggle("Lembrete de atualização de peso", isOn: $reminderEnabled)
                 .padding()
@@ -86,32 +88,38 @@ struct SettingsView: View {
     }
     
     private func scheduleMotivationalQuotes() {
-        guard let quotes = loadMotivationalQuotes() else {
-            print("Erro ao carregar as frases motivacionais")
-            return
-        }
-        // Selecionar aleatoriamente uma frase motivacional
-        let randomIndex = Int.random(in: 0..<quotes.count)
-        let randomQuote = quotes[randomIndex]
-        
-        let content = UNMutableNotificationContent()
-        content.title = "Frase Motivacional"
-        content.body = randomQuote
-        content.sound = UNNotificationSound.default
-        
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
-        
-        let request = UNNotificationRequest(identifier: "motivationalQuotes", content: content, trigger: trigger)
-        
-        UNUserNotificationCenter.current().add(request) { error in
-            if let error = error {
-                print("Erro ao agendar notificação de frases motivacionais: \(error.localizedDescription)")
-            } else {
-                print("Notificação de frases motivacionais agendada com sucesso")
-                print(randomQuote)
-                //self.scheduleMotivationalQuotes()
+        while isRunning {
+            guard let quotes = loadMotivationalQuotes() else {
+                print("Erro ao carregar as frases motivacionais")
+                return
+            }
+            // Selecionar aleatoriamente uma frase motivacional
+            let randomIndex = Int.random(in: 0..<quotes.count)
+            let randomQuote = quotes[randomIndex]
+            
+            let content = UNMutableNotificationContent()
+            content.title = "Frase Motivacional"
+            content.body = randomQuote
+            content.sound = UNNotificationSound.default
+            
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+            
+            let request = UNNotificationRequest(identifier: "motivationalQuotes", content: content, trigger: trigger)
+            
+            UNUserNotificationCenter.current().add(request) { error in
+                if let error = error {
+                    print("Erro ao agendar notificação de frases motivacionais: \(error.localizedDescription)")
+                } else {
+                    print("Notificação de frases motivacionais agendada com sucesso")
+                    print(randomQuote)
+                }
             }
         }
+    }
+
+    // Função para parar a execução
+    private func stopScheduleMotivationalQuotes() {
+        isRunning = false
     }
     
     private func loadMotivationalQuotes() -> [String]? {
