@@ -12,7 +12,7 @@ struct SettingsView: View {
     @AppStorage("reminderEnabled") private var reminderEnabled = false
     @AppStorage("reminderFrequency") private var reminderFrequency: ReminderFrequency = .daily
     @AppStorage("motivationalQuotesEnabled") private var motivationalQuotesEnabled = false
-    private var isRunning = true
+    private var isRunning = false
 
     var body: some View {
         VStack {
@@ -20,6 +20,7 @@ struct SettingsView: View {
                 .padding()
                 .onChange(of: motivationalQuotesEnabled) { enabled in
                     if enabled {
+                        isRunning = true
                         scheduleMotivationalQuotes()
                     } else {
                         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["motivationalQuotes"])
