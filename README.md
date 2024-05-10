@@ -2,14 +2,15 @@
  App desenvolvido em SwiftUI para controle de peso corporal
 
 #lightmode 
-![Simulator Screenshot - iPhone 13 mini - 2024-05-10 at 10 38 31](https://github.com/lucasnparreira/FollowWeight/assets/153011314/92c58f20-e135-444f-b8f9-dd58d2240d03)
-![Simulator Screenshot - iPhone 13 mini - 2024-05-10 at 10 38 24](https://github.com/lucasnparreira/FollowWeight/assets/153011314/a112f725-6b13-4038-9565-c775e4b6b1a1)
-![Simulator Screenshot - iPhone 13 mini - 2024-05-10 at 10 38 18](https://github.com/lucasnparreira/FollowWeight/assets/153011314/6b4c58b9-6847-4d33-95fa-6032f1a383ef)
-![Simulator Screenshot - iPhone 13 mini - 2024-05-10 at 10 38 10](https://github.com/lucasnparreira/FollowWeight/assets/153011314/8e1a83c8-8ec0-47e5-b902-5e7fdca3f21e)
+![Screenshot 2024-05-10 at 10 48 44](https://github.com/lucasnparreira/FollowWeight/assets/153011314/0723b203-97a5-4ca0-bd7d-1edce21c8686)
+![Screenshot 2024-05-10 at 10 48 36](https://github.com/lucasnparreira/FollowWeight/assets/153011314/f6af539e-de5f-4f33-a1fb-f6de6379e719)
+![Screenshot 2024-05-10 at 10 48 29](https://github.com/lucasnparreira/FollowWeight/assets/153011314/4570a8e1-b43c-461a-8eef-bec8c15e6158)
+![Screenshot 2024-05-10 at 10 48 20](https://github.com/lucasnparreira/FollowWeight/assets/153011314/d9e57ff5-5748-4476-8fa9-d569ad651c0b)
+
 
 
 #darkmode
-![Simulator Screenshot - iPhone 13 mini - 2024-05-10 at 10 44 17](https://github.com/lucasnparreira/FollowWeight/assets/153011314/17dd632f-fe97-47af-bacb-8ab2c5ca80cb)
-![Simulator Screenshot - iPhone 13 mini - 2024-05-10 at 10 44 11](https://github.com/lucasnparreira/FollowWeight/assets/153011314/7360a367-a230-43cc-949d-33869a4d2c5f)
-![Simulator Screenshot - iPhone 13 mini - 2024-05-10 at 10 44 00](https://github.com/lucasnparreira/FollowWeight/assets/153011314/8143dbcc-ea67-4b20-8304-ed186a767d41)
-![Simulator Screenshot - iPhone 13 mini - 2024-05-10 at 10 43 55](https://github.com/lucasnparreira/FollowWeight/assets/153011314/fd2bd6a8-fad5-4725-b845-ca1bfce8769e)
+![Screenshot 2024-05-10 at 10 47 21](https://github.com/lucasnparreira/FollowWeight/assets/153011314/c0300f5f-a88e-4504-b0ca-521372ba4626)
+![Screenshot 2024-05-10 at 10 47 14](https://github.com/lucasnparreira/FollowWeight/assets/153011314/3d2e4533-8ddc-4ee4-b329-9824bcaa0476)
+![Screenshot 2024-05-10 at 10 47 06](https://github.com/lucasnparreira/FollowWeight/assets/153011314/87c72564-4bcb-4f61-b1d6-4abf515f53a0)
+![Screenshot 2024-05-10 at 10 46 54](https://github.com/lucasnparreira/FollowWeight/assets/153011314/2c8a3455-de90-48e6-a958-d0e78b4ac250)
