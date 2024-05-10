@@ -123,13 +123,13 @@
 				0F2D6C5A2BE803CE007590E8 /* LineChartView.swift */,
 				0F2D6C5C2BE8041D007590E8 /* LineChart.swift */,
 				0F2D6C602BE8046E007590E8 /* HealthTipsView.swift */,
+				0F6DFC872BEA1BF90084D88F /* SettingsView.swift */,
 				0F2D6C5E2BE80450007590E8 /* MainView.swift */,
 				0FC879AF2BE8DF3300A03CF7 /* data.json */,
 				0F2D6C2F2BE7FFEF007590E8 /* Assets.xcassets */,
 				0F2D6C312BE7FFEF007590E8 /* FollowWeightApp.entitlements */,
 				0F2D6C2A2BE7FFEC007590E8 /* WeightEntry.xcdatamodeld */,
 				0F2D6C322BE7FFEF007590E8 /* Preview Content */,
-				0F6DFC872BEA1BF90084D88F /* SettingsView.swift */,
 			);
 			path = FollowWeightApp;
 			sourceTree = "<group>";
